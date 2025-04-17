@@ -47,7 +47,7 @@ To run this application, you need:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/expense-splitter.git
+   git clone https://github.com/Adityabandaru18/expense-splitter.git
    cd expense-splitter
    ```
 
