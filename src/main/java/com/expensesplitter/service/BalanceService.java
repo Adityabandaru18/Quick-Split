@@ -11,9 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Service class for balance-related operations
- */
+
 public class BalanceService {
     private Connection connection;
 
@@ -21,11 +19,6 @@ public class BalanceService {
         this.connection = DatabaseHelper.getConnection();
     }
 
-    /**
-     * Get the balances for a user
-     * @param userId User ID
-     * @return Map of username to balance amount (positive: others owe user, negative: user owes others)
-     */
     public Map<String, Double> getUserBalances(int userId) {
         Map<String, Double> balances = new HashMap<>();
         
@@ -49,7 +42,6 @@ public class BalanceService {
             System.out.println("Error retrieving balances (owed to user): " + e.getMessage());
         }
         
-        // Get what the user owes to others
         String sql2 = "SELECT u.username, SUM(s.amount) as amount " +
                      "FROM splits s " +
                      "JOIN expenses e ON s.expense_id = e.id " +
@@ -79,13 +71,7 @@ public class BalanceService {
         return balances;
     }
 
-    /**
-     * Settle a debt between two users
-     * @param payerId User ID who is paying
-     * @param receiverId User ID who is receiving
-     * @param amount Amount being settled
-     * @return true if successful, false otherwise
-     */
+
     public boolean settleDebt(int payerId, int receiverId, double amount) {
         // Start a transaction
         try {
@@ -123,11 +109,7 @@ public class BalanceService {
         }
     }
 
-    /**
-     * Get all settlement history for a user
-     * @param userId User ID
-     * @return Map with two lists: "paid" (settlements where user paid) and "received" (settlements where user received)
-     */
+
     public Map<String, List<Map<String, Object>>> getSettlementHistory(int userId) {
         Map<String, List<Map<String, Object>>> history = new HashMap<>();
         history.put("paid", new ArrayList<>());

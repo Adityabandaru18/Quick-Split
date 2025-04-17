@@ -1,8 +1,6 @@
 package com.expensesplitter.model;
 
-/**
- * Model class representing a split of an expense between users
- */
+
 public class Split {
     private int id;
     private int expenseId;

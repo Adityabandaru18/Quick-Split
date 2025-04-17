@@ -1,8 +1,6 @@
 package com.expensesplitter.model;
 
-/**
- * Model class representing a user in the system
- */
+
 public class User {
     private int id;
     private String username;

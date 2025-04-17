@@ -1,8 +1,6 @@
 package com.expensesplitter.model;
 
-/**
- * Model class representing a settlement transaction between users
- */
+
 public class Transaction {
     private int id;
     private int payerId;

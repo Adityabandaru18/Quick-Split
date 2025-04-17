@@ -10,9 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Service class for user-related operations
- */
+
 public class UserService {
     private Connection connection;
 
@@ -20,13 +18,7 @@ public class UserService {
         this.connection = DatabaseHelper.getConnection();
     }
 
-    /**
-     * Register a new user
-     * @param username Username
-     * @param password Password
-     * @param email Email
-     * @return true if registration successful, false otherwise
-     */
+
     public boolean registerUser(String username, String password, String email) {
         String sql = "INSERT INTO users (username, password, email) VALUES (?, ?, ?)";
         try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
@@ -41,12 +33,7 @@ public class UserService {
         }
     }
 
-    /**
-     * Authenticate a user
-     * @param username Username
-     * @param password Password
-     * @return User object if authentication successful, null otherwise
-     */
+
     public User authenticateUser(String username, String password) {
         String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
         try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
@@ -67,11 +54,7 @@ public class UserService {
         return null;
     }
 
-    /**
-     * Get a user by username
-     * @param username Username
-     * @return User object if found, null otherwise
-     */
+
     public User getUserByUsername(String username) {
         String sql = "SELECT * FROM users WHERE username = ?";
         try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
@@ -91,10 +74,7 @@ public class UserService {
         return null;
     }
 
-    /**
-     * Get all users
-     * @return List of all users
-     */
+
     public List<User> getAllUsers() {
         String sql = "SELECT * FROM users";
         List<User> users = new ArrayList<>();

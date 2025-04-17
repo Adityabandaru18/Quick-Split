@@ -3,9 +3,7 @@ package com.expensesplitter.model;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Model class representing an expense in the system
- */
+
 public class Expense {
     private int id;
     private String description;

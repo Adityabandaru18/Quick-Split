@@ -8,9 +8,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Service class for expense-related operations
- */
+
 public class ExpenseService {
     private Connection connection;
 
@@ -18,13 +16,7 @@ public class ExpenseService {
         this.connection = DatabaseHelper.getConnection();
     }
 
-    /**
-     * Add a new expense
-     * @param description Expense description
-     * @param amount Expense amount
-     * @param createdById User ID who created the expense
-     * @return Expense ID if successful, -1 otherwise
-     */
+
     public int addExpense(String description, double amount, int createdById) {
         String sql = "INSERT INTO expenses (description, amount, created_by) VALUES (?, ?, ?)";
         try (PreparedStatement pstmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
@@ -43,13 +35,7 @@ public class ExpenseService {
         return -1;
     }
 
-    /**
-     * Add a split for an expense
-     * @param expenseId Expense ID
-     * @param userId User ID
-     * @param amount Split amount
-     * @return true if successful, false otherwise
-     */
+
     public boolean addSplit(int expenseId, int userId, double amount) {
         String sql = "INSERT INTO splits (expense_id, user_id, amount) VALUES (?, ?, ?)";
         try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
@@ -64,11 +50,7 @@ public class ExpenseService {
         }
     }
 
-    /**
-     * Get all expenses for a user
-     * @param userId User ID
-     * @return List of expenses
-     */
+
     public List<Expense> getUserExpenses(int userId) {
         String sql = "SELECT e.id, e.description, e.amount, e.created_at, u.username " +
                      "FROM expenses e JOIN users u ON e.created_by = u.id " +
@@ -99,11 +81,7 @@ public class ExpenseService {
         return expenses;
     }
 
-    /**
-     * Get all splits for an expense
-     * @param expenseId Expense ID
-     * @return List of splits
-     */
+
     public List<Split> getExpenseSplits(int expenseId) {
         String sql = "SELECT s.id, s.user_id, s.amount, s.is_paid, u.username " +
                      "FROM splits s JOIN users u ON s.user_id = u.id " +
@@ -130,11 +108,7 @@ public class ExpenseService {
         return splits;
     }
 
-    /**
-     * Get expense by ID
-     * @param expenseId Expense ID
-     * @return Expense object if found, null otherwise
-     */
+
     public Expense getExpenseById(int expenseId) {
         String sql = "SELECT e.id, e.description, e.amount, e.created_at, u.username " +
                      "FROM expenses e JOIN users u ON e.created_by = u.id " +
@@ -164,11 +138,6 @@ public class ExpenseService {
         return null;
     }
 
-    /**
-     * Delete an expense
-     * @param expenseId Expense ID
-     * @return true if successful, false otherwise
-     */
     public boolean deleteExpense(int expenseId) {
         // Start a transaction
         try {
