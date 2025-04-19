@@ -523,23 +523,22 @@ public class ConsoleUI {
     private void displayMainTitle() {
         System.out.println();
         System.out.println();
-        System.out.println("       ███████╗██╗  ██╗██████╗ ███████╗███╗   ██╗███████╗███████╗");
-        System.out.println("       ██╔════╝╚██╗██╔╝██╔══██╗██╔════╝████╗  ██║██╔════╝██╔════╝");
-        System.out.println("       █████╗   ╚███╔╝ ██████╔╝█████╗  ██╔██╗ ██║███████╗█████╗  ");
-        System.out.println("       ██╔══╝   ██╔██╗ ██╔═══╝ ██╔══╝  ██║╚██╗██║╚════██║██╔══╝  ");
-        System.out.println("       ███████╗██╔╝ ██╗██║     ███████╗██║ ╚████║███████║███████╗");
-        System.out.println("       ╚══════╝╚═╝  ╚═╝╚═╝     ╚══════╝╚═╝  ╚═══╝╚══════╝╚══════╝");
-        System.out.println("                       ███████╗██████╗ ██╗     ██╗████████╗████████╗███████╗██████╗  ");
-        System.out.println("                       ██╔════╝██╔══██╗██║     ██║╚══██╔══╝╚══██╔══╝██╔════╝██╔══██╗ ");
-        System.out.println("                       ███████╗██████╔╝██║     ██║   ██║      ██║   █████╗  ██████╔╝ ");
-        System.out.println("                       ╚════██║██╔═══╝ ██║     ██║   ██║      ██║   ██╔══╝  ██╔══██╗ ");
-        System.out.println("                       ███████║██║     ███████╗██║   ██║      ██║   ███████╗██║  ██║ ");
-        System.out.println("                       ╚══════╝╚═╝     ╚══════╝╚═╝   ╚═╝      ╚═╝   ╚══════╝╚═╝  ╚═╝ ");
+        System.out.println("       ██████╗ ██╗   ██╗██╗ ██████╗██╗  ██╗");
+        System.out.println("      ██╔═══██╗██║   ██║██║██╔════╝██║ ██╔╝");
+        System.out.println("      ██║   ██║██║   ██║██║██║     █████╔╝ ");
+        System.out.println("      ██║▄▄ ██║██║   ██║██║██║     ██╔═██╗ ");
+        System.out.println("      ╚██████╔╝╚██████╔╝██║╚██████╗██║  ██╗");
+        System.out.println("       ╚══▀▀═╝  ╚═════╝ ╚═╝ ╚═════╝╚═╝  ╚═╝");
+        System.out.println("                ███████╗██████╗ ██╗     ██╗████████╗");
+        System.out.println("                ██╔════╝██╔══██╗██║     ██║╚══██╔══╝");
+        System.out.println("                ███████╗██████╔╝██║     ██║   ██║   ");
+        System.out.println("                ╚════██║██╔═══╝ ██║     ██║   ██║   ");
+        System.out.println("                ███████║██║     ███████╗██║   ██║   ");
+        System.out.println("                ╚══════╝╚═╝     ╚══════╝╚═╝   ╚═╝   ");
         System.out.println();
     }
-    
     private void displaySubtitle(String subtitle) {
-        String formattedSubtitle = "????? " + subtitle + " ?????";
+        String formattedSubtitle = "★ " + subtitle + " ★";
         int padding = (CONSOLE_WIDTH - formattedSubtitle.length()) / 2;
         StringBuilder sb = new StringBuilder();
         
