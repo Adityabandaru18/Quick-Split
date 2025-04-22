@@ -1,4 +1,4 @@
-# Expense Splitter
+# Quick Split
 
 A Java-based console application for splitting expenses among friends and keeping track of who owes what. Think of it as a simplified version of Splitwise.
 
@@ -47,7 +47,7 @@ To run this application, you need:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/Adityabandaru18/expense-splitter.git
+   git clone https://github.com/Adityabandaru18/Quick-Split.git
    cd expense-splitter
    ```
 
