@@ -15,7 +15,7 @@ A Java-based console application for splitting expenses among friends and keepin
 
 | Login Screen | Adding an Expense | Viewing Balances |
 |:------------:|:-----------------:|:----------------:|
-| ![Login](images/login.png) | ![Add Expense](images/main.png) | ![Balances](images/balance.png) |
+| ![Login](images/1.jpg) | ![Add Expense](images/2.jpg) | ![Balances](images/3.jpg) |
 
 ## Prerequisites
 
